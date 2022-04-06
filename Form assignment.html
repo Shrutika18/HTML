@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border-top: black 1px solid;
+            border-bottom: black 1px solid;
+            border-left: black 1px solid;
+            border-right: black 1px solid;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: x-large;
+            background-color:lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Registration Form</h2>
+    <form> 
+    <label for="first name">First Name</label>
+    <input type="text"><br><br>
+
+    <label for="last name">Last Name</label>
+    <input type="text"><br><br>
+
+    <label for="date of birth">Date Of Birth</label>
+    <input type="date"><br><br>
+
+    <label for="gender">Gender</label>
+    <input type="radio" name="gender">
+    <label for="female">Female</label>
+    <input type="radio" name="gender">
+    <label for="male">Male</label>
+    <input type="radio" name="gender"><br><br>
+
+    <label for="country">Country</label>
+    <select>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Japan">Japan</option>
+        <option value="UK">Uk</option>
+        <option value="Amerika">Amerika</option>
+        <option value="Shrilanka">Shrilanka</option>
+    </select><br><br>
+
+    <label for="email">Email</label>
+    <input type="email"><br><br>
+
+    <label for="password">Password</label>
+    <input type="password"><br><br>
+
+    <label for="comments">Comments</label>
+    <textarea cols="30" rows="10"></textarea><br><br>
+
+    <input type="checkbox">
+    <label for="checkbox">I agree to the terms and conditions</label>
+    <br><br>
+
+    <input type="button" value="SUBMIT">
+    <input type="button" value="Cancel">
+    <br><br>
+
+    <fieldset>
+        <legend>
+            Choose your favourite color: 
+        </legend>
+        <label for="red">Red</label>
+        <input type="radio">
+        <label for="yellow">Yellow</label>
+        <input type="radio">
+    </fieldset>
+    </form>
+</body>
+</html>

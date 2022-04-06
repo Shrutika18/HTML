@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+     <div id="quote-box">
+      <p class="quote">You can do anything but not everything</p>
+      <p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
+    </div>
+    <button id="loadQuote">Show another quote</button>
+  </div>
+
+    <script>
+       var quotes = [
+	{
+	quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
+	source: "Dr. Seuss"
+	},
+	{
+	quote: "This too, shall pass.",
+	source: "Anonymous"
+	},
+	{
+	quote: "Keep your eyes on the stars and your feet on the ground.",
+	source: "Theodore Roosevelt"
+	},
+	{
+	quote: "The only person you should try to be better than is the person you were yesterday.",
+	source: "Anonymous"
+	},
+	{
+	quote: "Never be bullied into silence. Never allow yourself to be made a victim. Accept no one's definition of your life; define yourself.",
+	source: "Harvey Fierstein"
+	}
+];
+
+//Function to randomly select a quote value and return a random quote object from the quotes array
+function getRandomQuote () {
+	var randomNumber = Math.floor(Math.random() * (quotes.length));
+	var randomQuote = quotes[randomNumber];
+	return randomQuote;
+}	
+
+//Function to select random rgb color value
+function getRandomColor () {
+	var red = Math.floor(Math.random() * 256 );
+	var green = Math.floor(Math.random() * 256 );
+	var blue = Math.floor(Math.random() * 256 );
+	 //var randomColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+	//return randomColor;
+}
+
+//Function to call the getRandomQuote function and stores the returned quote object in a variable
+//Constructs a string containing the different properties of the quote object 
+function printQuote () {
+		var quotes = getRandomQuote ();
+		var quoteContainer = document.getElementById("quote-box");
+		var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+				if (quotes.citation) {quoteString += `<span class="citation">${quotes.citation}</span>`}
+				if (quotes.year) {quoteString += `<span class="year">${quotes.year}</span></p>`}
+				else {quoteString += '</p>'};
+					quoteContainer.innerHTML = quoteString;
+
+					//assigns random color value to document background color 
+					document.body.style.backgroundColor = getRandomColor ();
+}
+
+//Quote automatically refreshes every 15 seconds
+window.setInterval(function(){
+printQuote ();
+}, 15000);
+
+//Event listener on LoadQuote button to generate new quote		
+document.getElementById("loadQuote").addEventListener("click", printQuote, false);
+    </script>
+</body>
+</html>
